@@ -47,17 +47,18 @@ body {
   max-width: 1600px;
   width: 100%;
   font-size: 1.3rem;
-  height: 150px;
+  height: 120px;
 }
 .header-logo {
   width: 50%;
   max-width: 960px;
+  background-color: var(--main-blue);
+  height: 100%;
 }
 .header-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 20px 0px;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -90,20 +91,31 @@ body {
 }
 .content-slider {
   width: 100%;
+  position: relative;
+  margin: auto;
 }
 .card-slide {
   cursor: pointer;
-  width: 90%;
+  max-width: 1476px;
+  width: 100%;
   border: 2px solid black;
-  padding: 20px;
+  padding: 60px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-green);
 }
 .img-slide {
-  border-radius: 50%
+  border-radius: 50%;
+  margin: 0 40px;
 }
 .img-slide:hover {
   -webkit-filter: grayscale(50%);
+}
+.text-block-slide {
+  max-width: 400px;
+  width: 100%;
 }
 .content-form {
   display: flex;
@@ -149,6 +161,10 @@ body {
   width: 100%;
   font-weight: 600;
 }
+.input-fun {
+  font-weight: 600;
+  margin: 0 auto;
+}
 .content-main-img {
   max-width: 800px;
   -webkit-filter: grayscale(50%);
@@ -166,6 +182,7 @@ body {
   font-weight: 600;
   width: 100%;
   max-width: 1520px;
+  border-radius: 5px;
 }
 .ul-grum {
   display: flex;
@@ -192,6 +209,25 @@ body {
 .div-grum h2 {
   height: 70px;
 }
+.dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  background-color: var(--main-grey);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6 ease;
+}
+.active, .dot:hover {
+  background-color: var(--main-dark-blue);
+}
 .footer {
   display: flex;
   flex-direction: row;
@@ -203,5 +239,18 @@ body {
   font-size: 1.3rem;
   height: 300px;
   max-width: 1600px;
-  
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+  from{opacity: .4}
+  to{opacity:1}
+}
+@keyframes fade{
+  from{opacity: .4}
+  to{opacity: 1}
 }

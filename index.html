@@ -14,39 +14,14 @@
         <img src="" alt="">
       </div>
       <div class="header-menu">
-        <a class="header-menu-item" href="#">Главная</a>
-        <a class="header-menu-item" href="#">Наши услуги</a>
-        <a class="header-menu-item" href="#">Акции</a>
-        <a class="header-menu-item" href="#">О нас</a>
+        <a class="header-menu-item" href="#" v-for="myItemMenu in menuItem">{{myItemMenu}}</a>
         <a href="#" class="header-lk">User:<span class="header-lk-basket">{{counter}}</span></a>
       </div>
     </header>
     <content class="content">
-      <div class="content-slider">
-        <div class="card-slide">
-          <img class="img-slide" src="media/people/people1.jpg" alt="">
-          <h3 class="card-name">Альберт Пуджов</h3>
-          <p class="card-description">Lorem</p>
-        </div>
-        <div class="card-slide">
-          <img class="img-slide" src="media/people/people2.jpg" alt="">
-          <h3 class="card-name">Альберт Пуджов</h3>
-          <p class="card-description">Lorem</p>
-        </div>
-        <div class="card-slide">
-          <img class="img-slide" src="media/people/people3.jpg" alt="">
-          <h3 class="card-name">Альберт Пуджов</h3>
-          <p class="card-description">Lorem</p>
-        </div>
-        <div class="card-slide">
-          <img class="img-slide" src="media/people/people4.jpg" alt="">
-          <h3 class="card-name">Альберт Пуджов</h3>
-          <p class="card-description">Lorem</p>
-        </div>
-      </div>
       <form action="" class="content-form">
-        <p>{{Name + '' + lastName}}</p>
-        <p class="content-form-title">Записать своего питомца</p>
+        <p class="input-fun">{{Name + ' ' + lastName}}</p>
+        <p class="content-form-title">Запишите своего питомца</p>
         <div class="content-form-pet">
           <input type="checkbox" id="contactChoice1"
           name="contact" value="cat" class="pet"> 
@@ -55,32 +30,56 @@
           name="contact" value="dog" class="pet">
           <label for="contactChoice2">Собака</label>
         </div>
-        <input class="content-form-input" type="text" v-bind:placeholder="placeholderName">
-        <input class="content-form-input" type="text" v-bind:placeholder="placeholderLastName">
-        <input class="content-form-input" type="text" v-bind:placeholder="placeholderPhone">
+        <input class="content-form-input" type="text" :placeholder="placeholderName" :value="Name" @input="inputChangedName">
+        <input class="content-form-input" type="text" :placeholder="placeholderLastName" :value="lastName" @input="inputChangedLastName">
+        <input class="content-form-input" type="text" :placeholder="placeholderPhone">
         <button class="content-form-button">Отправить</button>
       </form>
       <img src="media/pets/dog.jpg" alt="" class="content-main-img">
+      <div class="content-slider">
+        <div class="card-slide fade">
+          <img class="img-slide" src="media/people/people1.jpg" alt="">
+          <div class="text-block-slide">
+            <h3 class="card-name">Анна Смирнова</h3>
+            <p class="card-description">Директор</p>
+          </div>
+        </div>
+        <div class="card-slide fade">
+          <img class="img-slide" src="media/people/people2.jpg" alt="">
+          <div class="text-block-slide">
+            <h3 class="card-name">Екатерина Петрова</h3>
+            <p class="card-description">Стрижка собак</p>
+          </div>
+        </div>
+        <div class="card-slide fade">
+          <img class="img-slide" src="media/people/people3.jpg" alt="">
+          <div class="text-block-slide">
+            <h3 class="card-name">Михаил Масленников</h3>
+            <p class="card-description">Администратор</p>
+          </div>
+        </div>
+        <div class="card-slide fade">
+          <img class="img-slide" src="media/people/people4.jpg" alt="">
+          <div class="text-block-slide">
+            <h3 class="card-name">Мирослава Назарова</h3>
+            <p class="card-description">Стрижка кошек</p>
+          </div>
+        </div>
+        <div class="dots">
+          <span class="dot" @click="currentSlide(1)"></span>
+          <span class="dot" @click="currentSlide(2)"></span>
+          <span class="dot" @click="currentSlide(3)"></span>
+          <span class="dot" @click="currentSlide(4)"></span>
+        </div>
+      </div>
       <div class="content-info">
         <div class="info-grum">
           Груминг — комплекс процедур по уходу за шерстью, кожей, когтями, ушами и глазами собак. Может выполняться как в гигиенических целях, так и для улучшения внешнего вида собаки при подготовке к выставке или другим соревнованиям
         </div>
         <div class="ul-grum">
-          <div class="div-grum">
-            <h2>Творческий процесс</h2>
-             <p>В салонном груминге мастера получают простор для творчества - можно подобрать стрижку под особенности собаки, ее шерсти, фантазировать с креативом, создать целый образ. Словом, нести красоту в жизнь!</p>
-          </div>
-          <div class="div-grum">
-            <h2>Гармония с собой</h2>
-            <p>Большинство грумеров находят в груминге именно тот покой, релакс, который они не могли обрести на своей старой работе, например, в офисе. Животные, красота, полет творчества - такому богатству позавидуют представители многих профессий.</p>
-          </div>
-          <div class="div-grum">
-            <h2>Исполнение детской мечты</h2> 
-            <p>Все мы в детстве мечтали кем-то стать, и работать с собачками-кошечками хотели многие. Не у всех сложилось - "животных" профессий мало, разве что ветеринар или зоотехник, и они не всем подходят. Но теперь все проще - груминг дает такую возможность!</p>
-          </div>
-          <div class="div-grum">
-            <h2>Хороший заработок</h2> 
-            <p>Немаловажный аспект в наше сложное время.  Хотя, если в эту профессию люди идут именно за деньгами, у них не получается ничего. А вот те, кто увлечен грумингом по другим причинам, всегда добиваются успехов и хороших доходов. Вот такой парадокс.</p>
+          <div class="div-grum" v-for="myCardAdvantages in cardAdvantages">
+            <h2>{{myCardAdvantages.title}}</h2>
+             <p>{{myCardAdvantages.text}}</p>
           </div>
         </div>
       </div>
@@ -120,6 +119,7 @@
       </div>
     </footer>
   </div>
+  <script src="slider.js"></script>
   <script src="script.js" type="text/javascript"></script>
   <script src="vue.min.js" type="text/javascript"></script>
 </body>
