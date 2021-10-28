@@ -29,6 +29,10 @@ body {
   padding: 0;
   margin: 0 auto;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 .container {
   margin: 0 auto;
   display: flex;
@@ -91,6 +95,7 @@ body {
 }
 .content-slider {
   width: 100%;
+  height: 290px;
   position: relative;
   margin: auto;
 }
@@ -99,11 +104,14 @@ body {
   padding: 20px 0;
   max-width: 1600px;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: var(--main-green);
+}
+.card-slide:first-child {
+  display: flex;
 }
 .img-slide {
   border-radius: 50%;

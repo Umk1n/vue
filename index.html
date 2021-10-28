@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="slider.js" type="text/javascript"></script>
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -37,36 +38,15 @@
       </form>
       <img src="media/pets/dog.jpg" alt="" class="content-main-img">
       <div class="content-slider">
-        <div class="card-slide fade">
-          <img class="img-slide" src="media/people/people1.jpg" alt="">
-          <div class="text-block-slide">
-            <h3 class="card-name">Анна Смирнова</h3>
-            <p class="card-description">Директор</p>
+          <div class="card-slide fade" v-for="myPeople in people">
+            <img class="img-slide" :src="myPeople.imgPeople" alt="">
+            <div class="text-block-slide">
+              <h3 class="card-name">{{myPeople.namePeople}} {{myPeople.lastNamePeople}}</h3>
+              <p class="card-description">{{myPeople.positionPeople}}</p>
+            </div>
           </div>
-        </div>
-        <div class="card-slide fade">
-          <img class="img-slide" src="media/people/people2.jpg" alt="">
-          <div class="text-block-slide">
-            <h3 class="card-name">Екатерина Петрова</h3>
-            <p class="card-description">Стрижка собак</p>
-          </div>
-        </div>
-        <div class="card-slide fade">
-          <img class="img-slide" src="media/people/people3.jpg" alt="">
-          <div class="text-block-slide">
-            <h3 class="card-name">Михаил Масленников</h3>
-            <p class="card-description">Администратор</p>
-          </div>
-        </div>
-        <div class="card-slide fade">
-          <img class="img-slide" src="media/people/people4.jpg" alt="">
-          <div class="text-block-slide">
-            <h3 class="card-name">Мирослава Назарова</h3>
-            <p class="card-description">Стрижка кошек</p>
-          </div>
-        </div>
         <div class="dots">
-          <span class="dot" @click="currentSlide(1)"></span>
+          <span class="dot active" @click="currentSlide(1)"></span>
           <span class="dot" @click="currentSlide(2)"></span>
           <span class="dot" @click="currentSlide(3)"></span>
           <span class="dot" @click="currentSlide(4)"></span>
@@ -84,42 +64,34 @@
         </div>
       </div>
       <div class="content-card">
-        <div class="content-card-service">
+        <div class="content-block-category">
 
         </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
-        </div>
-        <div class="content-card-service">
-          
+        <div class="content-block-card">
+          <div class="content-card-service">
+
+          </div>
+          <div class="content-card-service">
+            
+          </div>
+          <div class="content-card-service">
+            
+          </div>
+          <div class="content-card-service" v-for="myServices in services">
+            <img :src="myServices.imgService" alt="" class="img-card-service">
+            <h4 class="title-card-service">{{myServices.nameService}}</h4>
+            <a href="#!" class="price-card-service">{{myServices.priceService}} руб</a>
+            <button class="add-card-service">+</button>
+          </div>
         </div>
       </div>
     </content>
     <footer class="footer">
-      <div class="footer-icon">
-        <a href="#!"><img src="icon/vk.png" alt=""></a>
-        <a href="#!"><img src="icon/telegram.png" alt=""></a>
-        <a href="#!"><img src="icon/facebook.png" alt=""></a>
-        <a href="#!"><img src="icon/youtube.png" alt=""></a>
+      <div class="footer-icon" v-for="mySocial in social">
+        <a href="#!"><img :src="mySocial.path" alt=""></a>
       </div>
     </footer>
   </div>
-  <script src="slider.js"></script>
   <script src="script.js" type="text/javascript"></script>
   <script src="vue.min.js" type="text/javascript"></script>
 </body>

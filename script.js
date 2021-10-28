@@ -12,6 +12,67 @@ ready(function() {
         counter: 0,
         Name: '',
         lastName: '',
+        people: [{
+          namePeople: 'Анна',
+          lastNamePeople: 'Смирнова',
+          positionPeople: 'Директор',
+          imgPeople: 'media/people/people1.jpg',
+        },
+        {
+          namePeople: 'Екатерина',
+          lastNamePeople: 'Петрова',
+          positionPeople: 'Стрижка кошек',
+          imgPeople: 'media/people/people2.jpg',
+        },
+        {
+          namePeople: 'Михаил',
+          lastNamePeople: 'Масленников',
+          positionPeople: 'Администратор',
+          imgPeople: 'media/people/people3.jpg',
+        },
+        {
+          namePeople: 'Мирослава',
+          lastNamePeople: 'Назарова',
+          positionPeople: 'Стрижка собак',
+          imgPeople: 'media/people/people4.jpg',
+        }
+      ],
+        services: [{
+          imgService: 'media/pets/dogstr.jpg',
+          nameService: 'Стрижка собаки',
+          priceService: 2000,
+        },
+        {
+          imgService: 'media/pets/catstr.jpg',
+          nameService: 'Стрижка кошки',
+          priceService: 2000,
+        },
+        {
+          imgService: 'media/pets/dogman.jpg',
+          nameService: 'Маникюр для собаки',
+          priceService: 2000,
+        },
+        {
+          imgService: 'media/pets/catman.jpg',
+          nameService: 'Маникюр для кошки',
+          priceService: 2000,
+        }],
+        social:[{
+          id: '1',
+          path: 'icon/vk.png',
+        },
+        {
+          id: '2',
+          path: 'icon/telegram.png',
+        },
+        {
+          id: '3',
+          path: 'icon/facebook.png',
+        },
+        {
+          id: '4',
+          path: 'icon/youtube.png',
+        }],
         menuItem: ['Главная','Наши услуги','Акции', 'О нас'],
         cardAdvantages: [{
           title: 'Творческий процесс',
